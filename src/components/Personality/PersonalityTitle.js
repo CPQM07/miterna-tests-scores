@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAtom } from '@fortawesome/free-solid-svg-icons'
-
-import CompletedInfo from '../TestNumber/CompletedInfo'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAtom } from "@fortawesome/free-solid-svg-icons";
+import CompletedInfo from "../TestNumber/CompletedInfo";
 
 class PersonalityTitle extends Component {
   static propTypes = {
@@ -12,38 +11,53 @@ class PersonalityTitle extends Component {
     score: PropTypes.number.isRequired,
     testsCompleted: PropTypes.number.isRequired,
     testsTotal: PropTypes.number.isRequired
-  }
+  };
 
   render() {
-    const {title,
+    const {
+      title,
       description,
       score,
       testsCompleted,
-      testsTotal} = this.props
+      testsTotal
+    } = this.props;
 
-    const iconAtom = <FontAwesomeIcon icon={faAtom} />
+    const iconAtom = <FontAwesomeIcon icon={faAtom} />;
 
     return (
-      <div className='card-header __with_collapsible-icons' id='headingPersonalityTrait'>
-        <button aria-controls='collapsePersonalitySkills' aria-expanded='true'
-          className='btn btn-link no-underline p-0 d-block text-left text-dark w-100'
-          data-target='#collapsePersonalityTrait' data-toggle='collapse' type='button'>
-          <div className='row d-flex align-items-center'>
-            <div className='col-lg-10 col-sm-8'>
-              <div className='d-inline-block w-100 d-flex align-items-center my-1'>
-                <i className='fas fa-pull-left h4 mb-0'>{iconAtom}</i>
-                <h3 className='h4 mb-0 d-inline-block'>{title}</h3>
-              </div>
-              <p className='small text-muted mb-0 pr-2 pr-sm-0'>{description}</p>
-            </div>
-            <div className='col-lg-2 col-sm-4'>
-              <span className='badge badge-pill big-badge text-center d-flex align-items-center justify-content-center p-2 my-2 ml-auto mx-md-auto badge-primary'
-                data-placement='top' data-toggle='tooltip' title=''
-                data-original-title='Puntaje Personalidad'>
-                <span className='h6 font-weight-bold mb-0'>
+      <div
+        className="card-header bg-white border-bottom-0 __with_collapsible-icons"
+        id="headingPersonalityTrait"
+      >
+        <button
+          aria-controls="collapsePersonalitySkills"
+          aria-expanded="true"
+          className="btn btn-link no-underline p-0 d-block text-left text-dark w-100"
+          data-target="#collapsePersonalitySkills"
+          data-toggle="collapse"
+          type="button"
+        >
+          <div className="d-flex justify-content-between">
+            <div>
+              <div className="d-inline-block w-100 d-flex align-items-center my-1">
+                <i className="fas fa-pull-left h5 mb-0">{iconAtom}</i>
+                <h3 className="h5 mb-0 d-inline-block">{title}</h3>
+                <span
+                  className="badge badge-pill badge-primary text-center ml-2"
+                  data-placement="bottom"
+                  data-toggle="tooltip"
+                  title="Puntaje Cognitivo"
+                  data-original-title="Puntaje Cognitivo"
+                >
                   {score}%
                 </span>
-              </span>
+              </div>
+              <small className="text-muted mb-0 pr-2 pr-sm-0">
+                {description}
+              </small>
+            </div>
+
+            <div className="d-flex align-items-center">
               <CompletedInfo
                 testsCompleted={testsCompleted}
                 testsTotal={testsTotal}
@@ -52,8 +66,8 @@ class PersonalityTitle extends Component {
           </div>
         </button>
       </div>
-    )
+    );
   }
 }
 
-export default PersonalityTitle
+export default PersonalityTitle;
