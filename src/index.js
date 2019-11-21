@@ -6,8 +6,6 @@ import Header from "./components/Header";
 import CognitiveCard from "./components/Cognitive/CognitiveCard";
 import PersonalityCard from "./components/Personality/PersonalityCard";
 
-// Assets
-import "bootstrap/dist/css/bootstrap.css";
 import "./scss/enrollments.scss";
 
 // Data
