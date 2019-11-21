@@ -13,7 +13,7 @@ class Score extends Component {
     const score = this.props.score;
 
     return (
-      <div className="list-group-item list-group-item-action col-md-6 border-0">
+      <div className="col-12">
         <ScoreTitle
           name={score.es_name}
           description={score.es_description}
@@ -26,6 +26,7 @@ class Score extends Component {
           profiledScore={score.profiled_score}
           optimalScore={score.optimal_score}
         />
+        <hr></hr>
       </div>
     );
   }

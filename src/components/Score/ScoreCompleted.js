@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import ProfileScore from "../Profile/ProfileScore";
+import FavoriteProfileScore from "../Profile/FavoriteProfileScore";
 
 class ScoreCompleted extends Component {
   static propTypes = {
@@ -14,7 +15,36 @@ class ScoreCompleted extends Component {
     const { score, lowLevel, highLevel } = this.props;
     const { profiledScore, optimalScore } = this.props;
     const roundedScore = Math.round(score);
+    const differenceScore = Math.abs(optimalScore - profiledScore);
 
+    if (optimalScore && profiledScore && differenceScore <= 5) {
+      return (
+        <div>
+          <div className="d-block relative-item">
+            <input
+              type="range"
+              disabled
+              readOnly
+              className="custom-range without_slider"
+            ></input>
+            <FavoriteProfileScore
+              profiledScore={profiledScore}
+              optimalScore={optimalScore}
+            />
+          </div>
+
+          <div className="row text-primary">
+            <div className="col-sm-6 text-left">
+              <small>{lowLevel}</small>
+            </div>
+
+            <div className="col-sm-6 text-right">
+              <small>{highLevel}</small>
+            </div>
+          </div>
+        </div>
+      );
+    }
     if (optimalScore && profiledScore) {
       return (
         <div>
@@ -22,20 +52,18 @@ class ScoreCompleted extends Component {
             <input
               type="range"
               disabled
-              readonly
-              min="0"
-              max="100"
-              class="custom-range without_slider"
+              readOnly
+              className="custom-range without_slider"
             ></input>
             <ProfileScore
               score={profiledScore}
-              tooltipMessage="Porcentaje Logrado"
+              tooltipMessage="Puntaje Logrado"
               icon="fa-user"
             />
 
             <ProfileScore
               score={optimalScore}
-              tooltipMessage="Porcentaje Óptimo"
+              tooltipMessage="Puntaje Óptimo"
               icon="fa-star"
             />
           </div>
@@ -58,14 +86,12 @@ class ScoreCompleted extends Component {
           <input
             type="range"
             disabled
-            readonly
-            min="0"
-            max="100"
-            class="custom-range without_slider"
+            readOnly
+            className="custom-range without_slider"
           ></input>
           <ProfileScore
             score={roundedScore}
-            tooltipMessage="Porcentaje Logrado"
+            tooltipMessage="Puntaje Logrado"
             icon="fa-user"
           />
         </div>

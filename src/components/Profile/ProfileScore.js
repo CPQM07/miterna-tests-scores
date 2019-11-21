@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 class ProfileScore extends Component {
   static propTypes = {
-    profiledScore: PropTypes.number.isRequired,
-    optimalScore: PropTypes.number.isRequired,
-    isPostulationScore: PropTypes.bool.isRequired
+    score: PropTypes.number.isRequired,
+    tooltipMessage: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired
   };
   render() {
     const { score, tooltipMessage, icon } = this.props;
@@ -15,14 +15,14 @@ class ProfileScore extends Component {
 
     return (
       <div className="indicator" style={{ left: _roundedScore + "%" }}>
-        <button
-          className="button btn btn-link p-2 border-0 text-primary"
+        <span
+          className="btn _btn-circle _btn-circle-sm m-1"
           data-placement="top"
           data-toggle="tooltip"
           data-original-title={`${message}`}
         >
-          <i className={`fas ${icon} fa-xs text-primary`} />
-        </button>
+          <i className={`fas ${icon} fa-uxs text-primary mt-1`} />
+        </span>
       </div>
     );
   }

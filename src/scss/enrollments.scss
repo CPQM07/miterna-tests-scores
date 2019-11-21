@@ -1,22 +1,8 @@
-$brand-primary: #5a3ee0;
-$brand-secondary: #20bcfa;
-$brand-success: #28a745;
-$brand-warning: #ffc107;
-$brand-danger: #dc3545;
-$brand-info: #17a2b8;
-$brand-dark: #2c2c2c;
-
-$theme-colors: (
-  primary: $brand-primary,
-  secondary: $brand-secondary,
-  success: $brand-success,
-  info: $brand-info,
-  warning: $brand-warning,
-  danger: $brand-danger,
-  dark: $brand-dark
-) !default;
-
 /* Show */
+
+.card-hover:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
 
 // Progress bar height and color number
 .progress {
@@ -101,6 +87,30 @@ $theme-colors: (
   }
 }
 
+.fa-uxs {
+  font-size: 0.5em;
+}
+
+._btn-circle {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+}
+
+._btn-circle i {
+  position: relative;
+  top: -1px;
+}
+
+._btn-circle-sm {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 0.9rem;
+}
 input[type="range"]::-webkit-slider-runnable-track {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5a3ee0+0,eaeaea+50,5a3ee0+100&1+10,0.95+25,0.9+40,0.8+50,0.9+60,0.95+75,1+90 */
   background: -moz-linear-gradient(

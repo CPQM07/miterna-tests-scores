@@ -17,13 +17,14 @@ export default class EnrollmentScores extends Component {
   render() {
     return (
       <div className="container">
-        <Header mainData={sampleScores.main_data} />
         <div className="row">
-          <div className="col-md-12">
+          <div className="col">
             <CognitiveCard
               cognitiveDataMain={sampleScores.cognitive_data.main}
               cognitiveDataScores={sampleScores.cognitive_data.scores}
             />
+          </div>
+          <div className="col">
             <PersonalityCard
               personalityDataMain={sampleScores.personality_data.main}
               personalityDataScores={sampleScores.personality_data.scores}
