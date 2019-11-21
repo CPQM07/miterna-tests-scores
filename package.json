@@ -1,10 +1,10 @@
 {
-  "name": "tests-scores",
+  "name": "miterna-tests-scores",
   "version": "1.2.2",
   "description": "",
-  "author": "rudolfaraya",
+  "author": "rudolfaraya - cpqm07",
   "license": "MIT",
-  "repository": "rudolfaraya/tests-scores",
+  "repository": "cpqm07/miterna-tests-scores",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
