@@ -1,25 +1,3 @@
-/* Show */
-
-.card-hover:hover {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
-// Progress bar height and color number
-.progress {
-  height: 0.7rem;
-  .progress-bar span {
-    font-size: 0.8rem;
-  }
-}
-.text-shadow {
-  text-shadow: 1px 1px 0px #333;
-}
-.big-badge {
-  width: 100px;
-}
-.total-score {
-  width: 90px;
-}
 // Progress bar load animation
 .progress-bar {
   width: 0;
@@ -29,6 +7,19 @@
     animation: show 0.35s forwards ease-in-out 0.5s;
   }
 }
+
+.text-shadow {
+  text-shadow: 1px 1px 0px #333;
+}
+
+.big-badge {
+  width: 100px;
+}
+
+.total-score {
+  width: 90px;
+}
+
 @keyframes progress {
   from {
     width: 0;
@@ -49,6 +40,7 @@
 .relative-item {
   position: relative;
 }
+
 .indicator {
   position: absolute;
   z-index: 5;
