@@ -19,18 +19,22 @@ export default class EnrollmentScores extends Component {
       <div className='container'>
         <Header mainData={scores.main_data} />
         <div className='row'>
-          <div className='col-sm-12 col-md-6'>
-            <CognitiveCard
-              cognitiveDataMain={scores.cognitive_data.main}
-              cognitiveDataScores={scores.cognitive_data.scores}
-            />
-          </div>
-          <div className='col-sm-12 col-md-6'>
-            <PersonalityCard
-              personalityDataMain={scores.personality_data.main}
-              personalityDataScores={scores.personality_data.scores}
-            />
-          </div>
+          {scores.cognitive_data.scores.length > 0 ? (
+            <div className='col'>
+              <CognitiveCard
+                cognitiveDataMain={scores.cognitive_data.main}
+                cognitiveDataScores={scores.cognitive_data.scores}
+              />
+            </div>
+          ) : null}
+          {scores.personality_data.scores.length > 0 ? (
+            <div className='col'>
+              <PersonalityCard
+                personalityDataMain={scores.personality_data.main}
+                personalityDataScores={scores.personality_data.scores}
+              />
+            </div>
+          ) : null}
         </div>
       </div>
     )

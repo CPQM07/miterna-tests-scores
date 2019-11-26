@@ -42,7 +42,7 @@ class CognitiveTitle extends Component {
             <i className='fas fa-pull-left h5 mb-0'>{iconBrain}</i>
             <h3 className='h5 mb-0 d-inline-block'>{title}</h3>
           </div>
-          <div>
+          <div className='text-info'>
             <CompletedInfo
               testsCompleted={testsCompleted}
               testsTotal={testsTotal}
