@@ -16,11 +16,7 @@ class CognitiveCard extends Component {
     const { cognitiveDataMain, cognitiveDataScores } = this.props
 
     return (
-      <div
-        className='card card-hover mb-4 pointer'
-        data-toggle='collapse'
-        data-target='#cognitive_toggler'
-      >
+      <div className='card card-hover mb-4 pointer'>
         <CognitiveTitle
           title={cognitiveDataMain.title}
           description={cognitiveDataMain.description}

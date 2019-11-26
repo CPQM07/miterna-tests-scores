@@ -16,11 +16,7 @@ class PersonalityCard extends Component {
     const { personalityDataMain, personalityDataScores } = this.props
 
     return (
-      <div
-        className='card card-hover mb-4 pointer'
-        data-toggle='collapse'
-        data-target='#personality_toggler'
-      >
+      <div className='card card-hover mb-4 pointer'>
         <PersonalityTitle
           title={personalityDataMain.title}
           description={personalityDataMain.description}

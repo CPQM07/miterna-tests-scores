@@ -13,6 +13,22 @@ class PersonalityTitle extends Component {
     testsTotal: PropTypes.number.isRequired
   }
 
+  constructor(props) {
+    super(props)
+    this.state = { isToggleOn: true }
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }))
+  }
+
+  drawInfoText() {
+    return this.state.isToggleOn ? 'ver más' : 'ver menos'
+  }
+
   render() {
     const { title, description, score, testsCompleted, testsTotal } = this.props
 
@@ -33,7 +49,7 @@ class PersonalityTitle extends Component {
           </div>
         </div>
         <div className='small text-muted text-justify my-2'>{description}</div>
-        <div className='text-center'>
+        <div className='d-flex justify-content-between align-items-center'>
           <span
             className='badge badge-pill badge-primary'
             data-placement='bottom'
@@ -43,6 +59,17 @@ class PersonalityTitle extends Component {
           >
             Coincidencia con el Perfil: {score}%
           </span>
+
+          <small
+            onClick={this.handleClick}
+            className='text-primary pointer'
+            data-toggle='collapse'
+            data-target='#personality_toggler'
+            aria-expanded='false'
+            aria-controls='personality_toggler'
+          >
+            {this.drawInfoText()}
+          </small>
         </div>
       </div>
     )

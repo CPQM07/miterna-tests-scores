@@ -29,8 +29,7 @@ class Header extends Component {
           <i className='far fa-id-card mr-1' />
           {mainData.profile_name}
           <small className='d-block text-muted'>
-            Las competencias fueron calificadas en base al perfil que usted
-            eligió al crear el proceso
+            Puntuación en base a este perfil
           </small>
         </span>
 

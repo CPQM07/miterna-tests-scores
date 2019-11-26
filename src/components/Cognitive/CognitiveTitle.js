@@ -14,6 +14,22 @@ class CognitiveTitle extends Component {
     testsTotal: PropTypes.number.isRequired
   }
 
+  constructor(props) {
+    super(props)
+    this.state = { isToggleOn: true }
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }))
+  }
+
+  drawInfoText() {
+    return this.state.isToggleOn ? 'ver más' : 'ver menos'
+  }
+
   render() {
     const { title, description, score, testsCompleted, testsTotal } = this.props
 
@@ -34,7 +50,7 @@ class CognitiveTitle extends Component {
           </div>
         </div>
         <div className='small text-muted text-justify my-2'>{description}</div>
-        <div className='text-center'>
+        <div className='d-flex justify-content-between align-items-center'>
           <span
             className='badge badge-pill badge-primary'
             data-placement='bottom'
@@ -44,6 +60,17 @@ class CognitiveTitle extends Component {
           >
             Coincidencia con el Perfil: {score}%
           </span>
+
+          <small
+            onClick={this.handleClick}
+            className='text-primary point'
+            data-toggle='collapse'
+            data-target='#cognitive_toggler'
+            aria-expanded='false'
+            aria-controls='cognitive_toggler'
+          >
+            {this.drawInfoText()}
+          </small>
         </div>
       </div>
     )
