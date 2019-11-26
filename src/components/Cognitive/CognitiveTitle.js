@@ -63,7 +63,7 @@ class CognitiveTitle extends Component {
 
           <small
             onClick={this.handleClick}
-            className='text-primary point'
+            className='text-primary pointer'
             data-toggle='collapse'
             data-target='#cognitive_toggler'
             aria-expanded='false'
