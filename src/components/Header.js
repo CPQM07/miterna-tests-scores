@@ -25,13 +25,15 @@ class Header extends Component {
           </small>
         </span>
 
-        <span className='text-center'>
-          <i className='far fa-id-card mr-1' />
-          {mainData.profile_name}
-          <small className='d-block text-muted'>
-            Puntuación en base a este perfil
-          </small>
-        </span>
+        {mainData.profile_name ? (
+          <span className='text-center'>
+            <i className='far fa-id-card mr-1' />
+            {mainData.profile_name}
+            <small className='d-block text-muted'>
+              Puntuación en base a este perfil
+            </small>
+          </span>
+        ) : null}
 
         <CompletedInfo
           testsCompleted={mainData.count_rendered}
