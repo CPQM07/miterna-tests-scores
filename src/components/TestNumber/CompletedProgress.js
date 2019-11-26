@@ -7,14 +7,13 @@ class CompletedProgress extends Component {
     testsTotal: PropTypes.number.isRequired
   }
   render() {
-    const {testsCompleted, testsTotal} = this.props
+    const { testsCompleted, testsTotal, status } = this.props
     return (
-      <small className='text-info d-block text-right'>
-        <strong>
-          <i className='fas fa-spinner fa-pulse mr-1' />
-          &nbsp;Completados {testsCompleted} de {testsTotal}
-        </strong>
-      </small>
+      <span className='text-center'>
+        <i className='fas fa-spinner fa-pulse mr-1' />
+        Completados {testsCompleted} de {testsTotal}
+        <small className='d-block text-muted'>{status}</small>
+      </span>
     )
   }
 }

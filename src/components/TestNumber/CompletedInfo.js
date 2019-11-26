@@ -11,13 +11,23 @@ class CompletedInfo extends Component {
     testsTotal: PropTypes.number.isRequired
   }
   render() {
-    const {testsCompleted, testsTotal} = this.props
+    const { testsCompleted, testsTotal, status } = this.props
 
     if (testsCompleted === testsTotal) {
-      return <CompletedFinished testsCompleted={testsCompleted} testsTotal={testsTotal} />
+      return (
+        <CompletedFinished
+          testsCompleted={testsCompleted}
+          testsTotal={testsTotal}
+          status={status}
+        />
+      )
     }
     return (
-      <CompletedProgress testsCompleted={testsCompleted} testsTotal={testsTotal} />
+      <CompletedProgress
+        testsCompleted={testsCompleted}
+        testsTotal={testsTotal}
+        status={status}
+      />
     )
   }
 }

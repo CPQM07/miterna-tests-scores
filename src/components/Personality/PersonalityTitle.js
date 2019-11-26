@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAtom } from "@fortawesome/free-solid-svg-icons";
-import CompletedInfo from "../TestNumber/CompletedInfo";
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAtom } from '@fortawesome/free-solid-svg-icons'
+import CompletedInfo from '../TestNumber/CompletedInfo'
 
 class PersonalityTitle extends Component {
   static propTypes = {
@@ -11,34 +11,19 @@ class PersonalityTitle extends Component {
     score: PropTypes.number.isRequired,
     testsCompleted: PropTypes.number.isRequired,
     testsTotal: PropTypes.number.isRequired
-  };
+  }
 
   render() {
-    const {
-      title,
-      description,
-      score,
-      testsCompleted,
-      testsTotal
-    } = this.props;
+    const { title, description, score, testsCompleted, testsTotal } = this.props
 
-    const iconAtom = <FontAwesomeIcon icon={faAtom} />;
+    const iconAtom = <FontAwesomeIcon icon={faAtom} />
 
     return (
-      <div className="card-header bg-white">
-        <div className="d-flex justify-content-between align-items-center">
-          <div className="d-flex align-items-center">
-            <i className="fas fa-pull-left h5 mb-0">{iconAtom}</i>
-            <h3 className="h5 mb-0 d-inline-block">{title}</h3>
-            <span
-              className="badge badge-pill badge-primary ml-2"
-              data-placement="bottom"
-              data-toggle="tooltip"
-              title="Puntaje Cognitivo"
-              data-original-title="Puntaje Cognitivo"
-            >
-              {score}%
-            </span>
+      <div className='card-header bg-white'>
+        <div className='d-flex justify-content-between align-items-center'>
+          <div className='d-flex align-items-center'>
+            <i className='fas fa-pull-left h5 mb-0'>{iconAtom}</i>
+            <h3 className='h5 mb-0 d-inline-block'>{title}</h3>
           </div>
           <div>
             <CompletedInfo
@@ -47,10 +32,21 @@ class PersonalityTitle extends Component {
             />
           </div>
         </div>
-        <div className="small text-muted text-justify my-2">{description}</div>
+        <div className='small text-muted text-justify my-2'>{description}</div>
+        <div className='text-center'>
+          <span
+            className='badge badge-pill badge-primary'
+            data-placement='bottom'
+            data-toggle='tooltip'
+            title='Coincidencia con Perfil - Puntaje Cognitivo'
+            data-original-title='Coincidencia con Perfil - Puntaje Cognitivo'
+          >
+            Coincidencia con el Perfil: {score}%
+          </span>
+        </div>
       </div>
-    );
+    )
   }
 }
 
-export default PersonalityTitle;
+export default PersonalityTitle
