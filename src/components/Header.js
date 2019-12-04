@@ -18,7 +18,7 @@ class Header extends Component {
       <div className='d-flex align-items-center justify-content-around text-bold m-4'>
         <span className='text-center'>
           <i className='fas fa-medal mr-1' />
-          Puntaje Global:
+          Puntaje Zyvo:
           <strong className='ml-1'>{mainData.main_score}%</strong>
           <small className='d-block text-muted'>
             Coincidencia con el perfil buscado

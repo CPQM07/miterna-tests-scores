@@ -13,7 +13,12 @@ class PersonalityCard extends Component {
   }
 
   render() {
-    const { personalityDataMain, personalityDataScores } = this.props
+    const {
+      personalityDataMain,
+      personalityDataScores,
+      hasProfile,
+      enrollment
+    } = this.props
 
     return (
       <div className='card card-hover mb-4'>
@@ -23,8 +28,10 @@ class PersonalityCard extends Component {
           score={personalityDataMain.personality_score}
           testsCompleted={personalityDataMain.count_rendered}
           testsTotal={personalityDataMain.count_total}
+          hasProfile={hasProfile}
+          enrollment={enrollment}
         />
-        <div className='collapse' id='personality_toggler'>
+        <div className='collapse' id={`personality_${enrollment}_toggler`}>
           <PersonalityCompetencies scores={personalityDataScores} />
         </div>
       </div>

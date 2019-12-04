@@ -10,7 +10,7 @@ class CompletedProgress extends Component {
     const { testsCompleted, testsTotal, status } = this.props
     return (
       <span className='text-center'>
-        <i className='fas fa-spinner fa-pulse mr-1' />
+        <i className='far fa-clock  mr-1' />
         Completados {testsCompleted} de {testsTotal}
         <small className='d-block text-muted'>{status}</small>
       </span>

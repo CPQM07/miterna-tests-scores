@@ -13,7 +13,12 @@ class CognitiveCard extends Component {
   }
 
   render() {
-    const { cognitiveDataMain, cognitiveDataScores } = this.props
+    const {
+      cognitiveDataMain,
+      cognitiveDataScores,
+      hasProfile,
+      enrollment
+    } = this.props
 
     return (
       <div className='card card-hover mb-4'>
@@ -23,8 +28,10 @@ class CognitiveCard extends Component {
           score={cognitiveDataMain.cognitive_score}
           testsCompleted={cognitiveDataMain.count_rendered}
           testsTotal={cognitiveDataMain.count_total}
+          hasProfile={hasProfile}
+          enrollment={enrollment}
         />
-        <div className='collapse' id='cognitive_toggler'>
+        <div className='collapse' id={`cognitive_${enrollment}_toggler`}>
           <CognitiveCompetencies scores={cognitiveDataScores} />
         </div>
       </div>

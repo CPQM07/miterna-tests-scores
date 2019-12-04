@@ -8,12 +8,12 @@ import PersonalityCard from './components/Personality/PersonalityCard'
 
 import './scss/enrollments.scss'
 
-// Data
-// import sampleScores from '../src/scores/enrollment'
+// import scores from '../src/scores/enrollment'
 
 export default class EnrollmentScores extends Component {
   render() {
     const { scores } = this.props
+    const { enrollment_id, profile_id } = scores.main_data
 
     return (
       <div className='container'>
@@ -24,6 +24,8 @@ export default class EnrollmentScores extends Component {
               <CognitiveCard
                 cognitiveDataMain={scores.cognitive_data.main}
                 cognitiveDataScores={scores.cognitive_data.scores}
+                hasProfile={!!profile_id}
+                enrollment={enrollment_id}
               />
             </div>
           ) : null}
@@ -32,6 +34,8 @@ export default class EnrollmentScores extends Component {
               <PersonalityCard
                 personalityDataMain={scores.personality_data.main}
                 personalityDataScores={scores.personality_data.scores}
+                hasProfile={!!profile_id}
+                enrollment={enrollment_id}
               />
             </div>
           ) : null}

@@ -30,8 +30,19 @@ class CognitiveTitle extends Component {
     return this.state.isToggleOn ? 'ver más' : 'ver menos'
   }
 
+  drawCoincidenceText() {
+    return this.props.hasProfile ? 'Coincidencia con el Perfil: ' : 'Puntaje: '
+  }
+
   render() {
-    const { title, description, score, testsCompleted, testsTotal } = this.props
+    const {
+      title,
+      description,
+      score,
+      testsCompleted,
+      testsTotal,
+      enrollment
+    } = this.props
 
     const iconBrain = <FontAwesomeIcon icon={faBrain} />
 
@@ -49,25 +60,26 @@ class CognitiveTitle extends Component {
             />
           </div>
         </div>
-        <div className='small text-muted text-justify my-2'>{description}</div>
+        <div className='small text-muted text-justify py-4'>{description}</div>
         <div className='d-flex justify-content-between align-items-center'>
           <span
             className='badge badge-pill badge-primary'
             data-placement='bottom'
             data-toggle='tooltip'
-            title='Coincidencia con Perfil - Puntaje Cognitivo'
-            data-original-title='Coincidencia con Perfil - Puntaje Cognitivo'
+            title='Coincidencia - Puntaje Cognitivo'
+            data-original-title='Coincidencia - Puntaje Cognitivo'
           >
-            Coincidencia con el Perfil: {score}%
+            {this.drawCoincidenceText()}
+            {score}%
           </span>
 
           <small
             onClick={this.handleClick}
             className='text-primary pointer'
             data-toggle='collapse'
-            data-target='#cognitive_toggler'
+            data-target={`#cognitive_${enrollment}_toggler`}
             aria-expanded='false'
-            aria-controls='cognitive_toggler'
+            aria-controls={`cognitive_${enrollment}_toggler`}
           >
             {this.drawInfoText()}
           </small>
